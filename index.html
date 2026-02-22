@@ -8,13 +8,11 @@
 
     <link rel="stylesheet" href="style.css">
 
-    
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 
 <body>
 
-    
     <div id="particles-js"></div>
 
     <header id="home">
@@ -23,6 +21,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -32,9 +31,12 @@
         <p>Pranjal Khanderao | Web Developer | Designer | Creator</p>
     </header>
 
+    <!-- ABOUT -->
     <section id="about">
         <h2>About Me</h2>
-        <img src="https://pranjal-khanderao.github.io/portfolio/me.jpeg" alt="Pranjal Khanderao Photo" class="profile-img">
+        <img src="https://pranjal-khanderao.github.io/portfolio/me.jpeg"
+            alt="Pranjal Khanderao Photo"
+            class="profile-img">
         <p>
             Hello! I'm Pranjal Khanderao, a passionate web developer with experience in building
             dynamic websites and web applications. I love creating user-friendly designs and
@@ -45,7 +47,8 @@
             My goal is to deliver high-quality digital experiences to clients and users alike.
         </p>
     </section>
-    
+
+    <!-- EXPERIENCE -->
     <section id="experience">
         <h2>Experience</h2>
 
@@ -66,6 +69,30 @@
         </div>
     </section>
 
+    <!-- PROJECTS -->
+    <section id="projects">
+        <h2>My Projects</h2>
+
+        <div class="projects-container">
+
+            <div class="project-card">
+                <h3>Password Strength Checker</h3>
+                <p>
+                    A web application that checks password strength in real-time
+                    and provides visual feedback to help users create secure passwords.
+                </p>
+
+                <a href="https://omkhond1919.github.io/Password-strenght-checker/"
+                    target="_blank"
+                    class="project-btn">
+                    Launch Project
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SKILLS -->
     <section id="skills">
         <h2>My Skills</h2>
 
@@ -106,6 +133,7 @@
         </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact">
         <h2>Contact Me</h2>
         <p>If you'd like to work together or just want to say hello, feel free to reach out!</p>
@@ -117,7 +145,7 @@
             </a>
         </p>
 
-         <div class="resume-download">
+        <div class="resume-download">
             <a href="https://pranjal-khanderao.github.io/portfolio/Resume.pdf"
                 download="Pranjal_Khanderao_Resume"
                 class="download-btn">
@@ -126,7 +154,6 @@
         </div>
     </section>
 
-    
     <footer>
         <p>&copy; 2025 Pranjal Khanderao. All rights reserved.</p>
 
@@ -144,65 +171,31 @@
         </ul>
     </footer>
 
-    
     <script>
         particlesJS("particles-js", {
             particles: {
-                number: {
-                    value: 160,
-                    density: {
-                        enable: true,
-                        value_area: 850
-                    }
-                },
-                color: {
-                    value: "#ffffff"
-                },
-                shape: {
-                    type: "circle"
-                },
-                opacity: {
-                    value: 0.5,
-                    random: true
-                },
-                size: {
-                    value: 2.8,
-                    random: true
-                },
-                line_linked: {
-                    enable: false
-                },
+                number: { value: 160, density: { enable: true, value_area: 850 } },
+                color: { value: "#ffffff" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5, random: true },
+                size: { value: 2.8, random: true },
+                line_linked: { enable: false },
                 move: {
                     enable: true,
                     speed: 0.8,
-                    direction: "none",
                     random: true,
-                    straight: false,
                     out_mode: "out"
                 }
             },
             interactivity: {
                 detect_on: "window",
                 events: {
-                    onhover: {
-                        enable: true,
-                        mode: "bubble"
-                    },
-                    onclick: {
-                        enable: true,
-                        mode: "push"
-                    }
+                    onhover: { enable: true, mode: "bubble" },
+                    onclick: { enable: true, mode: "push" }
                 },
                 modes: {
-                    bubble: {
-                        distance: 200,
-                        size: 4,
-                        duration: 0.5,
-                        opacity: 0.9
-                    },
-                    push: {
-                        particles_nb: 7
-                    }
+                    bubble: { distance: 200, size: 4, duration: 0.5, opacity: 0.9 },
+                    push: { particles_nb: 7 }
                 }
             },
             retina_detect: true
@@ -211,4 +204,3 @@
 
 </body>
 </html>
-            
