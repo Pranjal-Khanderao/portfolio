@@ -1,30 +1,39 @@
-/* RESET */
+/* ============================= */
+/* GLOBAL RESET */
+/* ============================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* BODY */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: #0f172a;
+    background: #0f172a; /* Dark background */
     color: #ffffff;
     line-height: 1.6;
     overflow-x: hidden;
     transition: background 0.4s ease, color 0.4s ease;
 }
 
-/* PARTICLES */
+/* ============================= */
+/* PARTICLES BACKGROUND */
+/* ============================= */
 #particles-js {
     position: fixed;
     width: 100%;
     height: 100%;
+    top: 0;
+    left: 0;
     z-index: -1;
 }
 
+/* ============================= */
 /* NAVIGATION */
+/* ============================= */
 nav {
+    display: flex;
+    justify-content: center;
     padding: 20px;
 }
 
@@ -33,35 +42,32 @@ nav {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    max-width: 1200px;
 }
 
-nav ul.nav-links {
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+ul.nav-links {
     display: flex;
     gap: 30px;
     list-style: none;
 }
 
-nav a {
+ul.nav-links li a {
     text-decoration: none;
     color: #ffffff;
     font-weight: 500;
     transition: 0.3s ease;
 }
 
-nav a:hover {
+ul.nav-links li a:hover {
     color: #60a5fa;
 }
 
-.theme-btn {
-    background: none;
-    border: 1px solid rgba(255,255,255,0.3);
-    color: #fff;
-    padding: 6px 12px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-/* HAMBURGER */
+/* Hamburger Menu */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -77,18 +83,23 @@ nav a:hover {
     transition: all 0.3s ease;
 }
 
-/* HAMBURGER ANIMATION */
-.hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* Theme Button */
+.theme-btn {
+    background: none;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
 }
 
+/* ============================= */
 /* HEADER */
+/* ============================= */
 header {
     text-align: center;
     padding: 100px 20px 80px;
@@ -96,10 +107,18 @@ header {
 
 header h1 {
     font-size: 3rem;
+    font-weight: 700;
     margin-bottom: 15px;
 }
 
-/* SECTIONS */
+header p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+/* ============================= */
+/* GLASS SECTION STYLE */
+/* ============================= */
 section {
     width: 85%;
     max-width: 1100px;
@@ -108,37 +127,112 @@ section {
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35), inset 0 0 0.5px rgba(255,255,255,0.2);
     transition: 0.3s ease;
 }
 
 section:hover {
     transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4), inset 0 0 1px rgba(255,255,255,0.3);
 }
 
-/* PROFILE IMAGE */
+section h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* ============================= */
+/* ABOUT SECTION */
+/* ============================= */
 .profile-img {
     width: 150px;
     border-radius: 50%;
     margin-bottom: 20px;
-    border: 3px solid rgba(255, 255, 255, 0.3);
+    border: 3px solid rgba(255,255,255,0.3);
 }
 
-/* PROJECTS */
+/* ============================= */
+/* EXPERIENCE SECTION */
+/* ============================= */
+.experience-container {
+    margin-top: 20px;
+}
+
+.experience-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.experience-item h4 {
+    font-weight: 400;
+    opacity: 0.8;
+    margin-bottom: 10px;
+}
+
+.experience-item ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+/* ============================= */
+/* SKILLS SECTION */
+/* ============================= */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.skill-category {
+    flex: 1 1 250px;
+    background: rgba(255,255,255,0.05);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.08);
+}
+
+.skill-category h3 {
+    margin-bottom: 15px;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.skill-category ul li {
+    margin: 8px 0;
+    font-weight: 500;
+}
+
+/* ============================= */
+/* PROJECTS SECTION */
+/* ============================= */
 .projects-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
-    flex-wrap: wrap;
 }
 
 .project-card {
     max-width: 500px;
     padding: 25px;
     border-radius: 15px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
     text-align: center;
     transition: 0.3s ease;
 }
@@ -147,77 +241,94 @@ section:hover {
     transform: translateY(-5px);
 }
 
-.project-btn {
+.project-btn,
+.download-btn {
     display: inline-block;
     padding: 10px 20px;
     border-radius: 25px;
-    background: #60a5fa;
+    background: #0f172a;  /* blue like launch project */
     color: #0f172a;
     font-weight: 600;
     text-decoration: none;
+    transition: 0.3s ease, transform 0.2s ease;
 }
 
-.project-btn:hover {
+.project-btn:hover,
+.download-btn:hover {
     background: #3b82f6;
+    transform: scale(1.05);
 }
 
-/* CURRENTLY WORKING BADGE */
 .working-badge {
     display: inline-block;
     margin-top: 15px;
     padding: 8px 16px;
     border-radius: 20px;
-    background: rgba(255, 193, 7, 0.15);
-    border: 1px solid rgba(255, 193, 7, 0.5);
+    background: rgba(255,193,7,0.15);
+    border: 1px solid rgba(255,193,7,0.5);
     color: #ffc107;
     font-weight: 600;
     font-size: 0.9rem;
 }
 
-body.light-mode .working-badge {
-    background: rgba(255, 193, 7, 0.2);
-    color: #b45309;
-    border: 1px solid rgba(180, 83, 9, 0.4);
+/* ============================= */
+/* CONTACT SECTION */
+/* ============================= */
+#contact {
+    text-align: center;
 }
 
+#contact a {
+    color: #60a5fa;
+    text-decoration: none;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+.resume-download {
+    margin-top: 20px;
+}
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 50px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* ============================= */
 /* LIGHT MODE */
+/* ============================= */
 body.light-mode {
     background: #f1f5f9;
     color: #0f172a;
 }
 
 body.light-mode section {
-    background: rgba(0, 0, 0, 0.05);
+    background: rgba(0,0,0,0.05);
 }
 
 body.light-mode nav a {
     color: #0f172a;
 }
-.download-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 25px;
-    background: #60a5fa;
-    color: #0f172a;
-    font-weight: 600;
-    text-decoration: none;
-    transition: 0.3s ease;
-}
 
-.download-btn:hover {
-    background: #3b82f6;
-    color: #fff;
-}
-
+/* ============================= */
 /* MOBILE RESPONSIVE */
+/* ============================= */
 @media (max-width: 768px) {
-    nav ul.nav-links {
+    ul.nav-links {
         position: fixed;
         top: 70px;
         right: -100%;
         height: calc(100vh - 70px);
         width: 250px;
-        background: rgba(15, 23, 42, 0.95);
+        background: rgba(15,23,42,0.95);
         flex-direction: column;
         gap: 20px;
         padding: 40px 20px;
@@ -225,24 +336,16 @@ body.light-mode nav a {
         z-index: 999;
     }
 
-    nav ul.nav-links.active {
+    ul.nav-links.active {
         right: 0;
     }
 
-    nav ul.nav-links li {
+    ul.nav-links li {
         text-align: center;
     }
 
     .hamburger {
         display: flex;
-    }
-
-    body.light-mode nav ul.nav-links {
-        background: rgba(241, 245, 249, 0.95);
-    }
-
-    body.light-mode nav ul.nav-links li a {
-        color: #0f172a;
     }
 
     header {
