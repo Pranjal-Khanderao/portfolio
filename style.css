@@ -1,9 +1,11 @@
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* BODY */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background: #0f172a;
@@ -23,14 +25,17 @@ body {
 
 /* NAVIGATION */
 nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
     padding: 20px;
 }
 
-nav ul {
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+nav ul.nav-links {
     display: flex;
     gap: 30px;
     list-style: none;
@@ -56,6 +61,33 @@ nav a:hover {
     cursor: pointer;
 }
 
+/* HAMBURGER */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* HAMBURGER ANIMATION */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
 /* HEADER */
 header {
     text-align: center;
@@ -67,7 +99,7 @@ header h1 {
     margin-bottom: 15px;
 }
 
-/* GLASS SECTIONS */
+/* SECTIONS */
 section {
     width: 85%;
     max-width: 1100px;
@@ -160,4 +192,61 @@ body.light-mode section {
 
 body.light-mode nav a {
     color: #0f172a;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    nav ul.nav-links {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        height: calc(100vh - 70px);
+        width: 250px;
+        background: rgba(15, 23, 42, 0.95);
+        flex-direction: column;
+        gap: 20px;
+        padding: 40px 20px;
+        transition: right 0.3s ease;
+        z-index: 999;
+    }
+
+    nav ul.nav-links.active {
+        right: 0;
+    }
+
+    nav ul.nav-links li {
+        text-align: center;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    body.light-mode nav ul.nav-links {
+        background: rgba(241, 245, 249, 0.95);
+    }
+
+    body.light-mode nav ul.nav-links li a {
+        color: #0f172a;
+    }
+
+    header {
+        padding: 80px 20px 60px;
+    }
+
+    section {
+        width: 90%;
+        padding: 30px;
+    }
+
+    .projects-container,
+    .skills-container,
+    .experience-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .profile-img {
+        width: 120px;
+    }
 }
