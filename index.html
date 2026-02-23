@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pranjal Khanderao - Portfolio</title>
 
-    <link rel="stylesheet" href="https://pranjal-khanderao.github.io/portfolio/style.css">
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 
@@ -51,7 +51,6 @@
     <!-- EXPERIENCE -->
     <section id="experience">
         <h2>Experience</h2>
-
         <div class="experience-container">
             <div class="experience-item">
                 <h3>Web Development Intern</h3>
@@ -92,11 +91,8 @@
                     deposit & withdraw operations, and transaction tracking.
                     Built using Node.js, Express.js and MongoDB.
                 </p>
-                <a href="#"
-                    target="_blank"
-                    class="project-btn">
-                    View Project
-                </a>
+
+                <span class="working-badge">🚧 Currently Working</span>
             </div>
 
         </div>
@@ -185,9 +181,9 @@
         if (currentTheme === "light") {
             document.body.classList.add("light-mode");
             toggleBtn.textContent = "☀️";
-            loadParticles("#0f172a"); // Dark particles in light mode
+            loadParticles("#0f172a");
         } else {
-            loadParticles("#ffffff"); // White particles in dark mode
+            loadParticles("#ffffff");
         }
 
         toggleBtn.addEventListener("click", () => {
@@ -202,211 +198,6 @@
                 localStorage.setItem("theme", "dark");
                 loadParticles("#ffffff");
             }
-        });
-    </script>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pranjal Khanderao - Portfolio</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-</head>
-
-<body>
-
-    <div id="particles-js"></div>
-
-    <header id="home">
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-
-        <h1>Welcome to My Portfolio</h1>
-        <p>Pranjal Khanderao | Web Developer | Designer | Creator</p>
-    </header>
-
-    <!-- ABOUT -->
-    <section id="about">
-        <h2>About Me</h2>
-        <img src="https://pranjal-khanderao.github.io/portfolio/me.jpeg"
-            alt="Pranjal Khanderao Photo"
-            class="profile-img">
-        <p>
-            Hello! I'm Pranjal Khanderao, a passionate web developer with experience in building
-            dynamic websites and web applications. I love creating user-friendly designs and
-            writing clean, efficient code.
-        </p>
-        <p>
-            I specialize in HTML, CSS, JavaScript, and modern web frameworks.
-            My goal is to deliver high-quality digital experiences to clients and users alike.
-        </p>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience">
-        <h2>Experience</h2>
-
-        <div class="experience-container">
-            <div class="experience-item">
-                <h3>Web Development Intern</h3>
-                <h4>Novapex InfoHub</h4>
-                <p><strong>Duration:</strong> August 2025 – October 2025</p>
-
-                <ul>
-                    <li>Developed and maintained responsive web applications using HTML, CSS, and JavaScript.</li>
-                    <li>Collaborated with the development team to build user-friendly interfaces.</li>
-                    <li>Worked on backend integration using Node.js and Express.js.</li>
-                    <li>Optimized website performance and improved UI/UX design.</li>
-                    <li>Participated in code reviews and agile development processes.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects">
-        <h2>My Projects</h2>
-
-        <div class="projects-container">
-
-            <div class="project-card">
-                <h3>Password Strength Checker</h3>
-                <p>
-                    A web application that checks password strength in real-time
-                    and provides visual feedback to help users create secure passwords.
-                </p>
-
-                <a href="https://pranjal-khanderao.github.io/Password-strenght-checker/"
-                    target="_blank"
-                    class="project-btn">
-                    Launch Project
-                </a>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills">
-        <h2>My Skills</h2>
-
-        <div class="skills-container">
-
-            <div class="skill-category">
-                <h3>Frontend Development</h3>
-                <ul>
-                    <li>HTML5</li>
-                    <li>CSS3</li>
-                    <li>JavaScript (ES6+)</li>
-                    <li>Responsive Design</li>
-                    <li>Bootstrap</li>
-                    <li>Tailwind CSS</li>
-                </ul>
-            </div>
-
-            <div class="skill-category">
-                <h3>Backend Development</h3>
-                <ul>
-                    <li>Node.js</li>
-                    <li>Express.js</li>
-                    <li>REST APIs</li>
-                    <li>MongoDB</li>
-                </ul>
-            </div>
-
-            <div class="skill-category">
-                <h3>Tools & Technologies</h3>
-                <ul>
-                    <li>Git & GitHub</li>
-                    <li>VS Code</li>
-                    <li>Figma</li>
-                    <li>Deployment (GitHub Pages / Vercel)</li>
-                </ul>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>If you'd like to work together or just want to say hello, feel free to reach out!</p>
-
-        <p>
-            Email:
-            <a href="mailto:pranjalpatil1108@gmail.com">
-                pranjalpatil1108@gmail.com
-            </a>
-        </p>
-
-        <div class="resume-download">
-            <a href="https://pranjal-khanderao.github.io/portfolio/Resume.pdf"
-                download="Pranjal_Khanderao_Resume"
-                class="download-btn">
-                Download My Resume
-            </a>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Pranjal Khanderao. All rights reserved.</p>
-
-        <ul>
-            <li>
-                <a href="https://www.linkedin.com/in/pranjalKhanderao" target="_blank">
-                    LinkedIn
-                </a>
-            </li>
-            <li>
-                <a href="https://github.com/Pranjal-Khanderao" target="_blank">
-                    GitHub
-                </a>
-            </li>
-        </ul>
-    </footer>
-
-    <script>
-        particlesJS("particles-js", {
-            particles: {
-                number: { value: 160, density: { enable: true, value_area: 850 } },
-                color: { value: "#ffffff" },
-                shape: { type: "circle" },
-                opacity: { value: 0.5, random: true },
-                size: { value: 2.8, random: true },
-                line_linked: { enable: false },
-                move: {
-                    enable: true,
-                    speed: 0.8,
-                    random: true,
-                    out_mode: "out"
-                }
-            },
-            interactivity: {
-                detect_on: "window",
-                events: {
-                    onhover: { enable: true, mode: "bubble" },
-                    onclick: { enable: true, mode: "push" }
-                },
-                modes: {
-                    bubble: { distance: 200, size: 4, duration: 0.5, opacity: 0.9 },
-                    push: { particles_nb: 7 }
-                }
-            },
-            retina_detect: true
         });
     </script>
 
