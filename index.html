@@ -7,6 +7,214 @@
     <title>Pranjal Khanderao - Portfolio</title>
 
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+
+<body>
+
+    <div id="particles-js"></div>
+
+    <header id="home">
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <button id="theme-toggle" class="theme-btn">🌙</button>
+        </nav>
+
+        <h1>Welcome to My Portfolio</h1>
+        <p>Pranjal Khanderao | Web Developer | Designer | Creator</p>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <h2>About Me</h2>
+        <img src="https://pranjal-khanderao.github.io/portfolio/me.jpeg"
+            alt="Pranjal Khanderao Photo"
+            class="profile-img">
+        <p>
+            Hello! I'm Pranjal Khanderao, a passionate web developer with experience in building
+            dynamic websites and web applications. I love creating user-friendly designs and
+            writing clean, efficient code.
+        </p>
+        <p>
+            I specialize in HTML, CSS, JavaScript, Node.js, and MongoDB.
+        </p>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+        <h2>Experience</h2>
+
+        <div class="experience-container">
+            <div class="experience-item">
+                <h3>Web Development Intern</h3>
+                <h4>Novapex InfoHub</h4>
+                <p><strong>Duration:</strong> August 2025 – October 2025</p>
+                <ul>
+                    <li>Developed responsive web applications.</li>
+                    <li>Worked on backend integration using Node.js & Express.js.</li>
+                    <li>Optimized UI/UX and performance.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+        <h2>My Projects</h2>
+
+        <div class="projects-container">
+
+            <div class="project-card">
+                <h3>Password Strength Checker</h3>
+                <p>
+                    A web application that checks password strength in real-time
+                    and provides visual feedback to help users create secure passwords.
+                </p>
+                <a href="https://pranjal-khanderao.github.io/Password-strenght-checker/"
+                    target="_blank"
+                    class="project-btn">
+                    Launch Project
+                </a>
+            </div>
+
+            <div class="project-card">
+                <h3>Bank Management System</h3>
+                <p>
+                    A full-stack banking system allowing account creation,
+                    deposit & withdraw operations, and transaction tracking.
+                    Built using Node.js, Express.js and MongoDB.
+                </p>
+                <a href="#"
+                    target="_blank"
+                    class="project-btn">
+                    View Project
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <h2>My Skills</h2>
+
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Frontend Development</h3>
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                    <li>Responsive Design</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Backend Development</h3>
+                <ul>
+                    <li>Node.js</li>
+                    <li>Express.js</li>
+                    <li>MongoDB</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email:
+            <a href="mailto:pranjalpatil1108@gmail.com">
+                pranjalpatil1108@gmail.com
+            </a>
+        </p>
+
+        <div class="resume-download">
+            <a href="https://pranjal-khanderao.github.io/portfolio/Resume.pdf"
+                download="Pranjal_Khanderao_Resume"
+                class="download-btn">
+                Download My Resume
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Pranjal Khanderao. All rights reserved.</p>
+    </footer>
+
+    <!-- PARTICLES + THEME SCRIPT -->
+    <script>
+        const toggleBtn = document.getElementById("theme-toggle");
+
+        function loadParticles(color) {
+            particlesJS("particles-js", {
+                particles: {
+                    number: { value: 160, density: { enable: true, value_area: 850 } },
+                    color: { value: color },
+                    shape: { type: "circle" },
+                    opacity: { value: 0.5, random: true },
+                    size: { value: 2.8, random: true },
+                    line_linked: { enable: false },
+                    move: { enable: true, speed: 0.8, random: true, out_mode: "out" }
+                },
+                interactivity: {
+                    detect_on: "window",
+                    events: {
+                        onhover: { enable: true, mode: "bubble" },
+                        onclick: { enable: true, mode: "push" }
+                    },
+                    modes: {
+                        bubble: { distance: 200, size: 4, duration: 0.5, opacity: 0.9 },
+                        push: { particles_nb: 7 }
+                    }
+                },
+                retina_detect: true
+            });
+        }
+
+        let currentTheme = localStorage.getItem("theme");
+
+        if (currentTheme === "light") {
+            document.body.classList.add("light-mode");
+            toggleBtn.textContent = "☀️";
+            loadParticles("#0f172a"); // Dark particles in light mode
+        } else {
+            loadParticles("#ffffff"); // White particles in dark mode
+        }
+
+        toggleBtn.addEventListener("click", () => {
+            document.body.classList.toggle("light-mode");
+
+            if (document.body.classList.contains("light-mode")) {
+                toggleBtn.textContent = "☀️";
+                localStorage.setItem("theme", "light");
+                loadParticles("#0f172a");
+            } else {
+                toggleBtn.textContent = "🌙";
+                localStorage.setItem("theme", "dark");
+                loadParticles("#ffffff");
+            }
+        });
+    </script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pranjal Khanderao - Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
