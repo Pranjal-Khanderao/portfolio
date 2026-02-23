@@ -241,7 +241,16 @@ section h2 {
     transform: translateY(-5px);
 }
 
-.project-btn,
+.project-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: #0f172a;  /* blue like launch project */
+    color: #60a5fa;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s ease, transform 0.2s ease;
+}
 .download-btn {
     display: inline-block;
     padding: 10px 20px;
