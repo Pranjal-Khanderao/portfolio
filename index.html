@@ -130,7 +130,72 @@
     </footer>
 
     <!-- SCRIPTS -->
-    <script src="script.js"></script>
+    <script> const toggleBtn = document.getElementById("theme-toggle");
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+
+function loadParticles(color) {
+    particlesJS("particles-js", {
+        particles: {
+            number: { value: 160, density: { enable: true, value_area: 850 } },
+            color: { value: color },
+            shape: { type: "circle" },
+            opacity: { value: 0.5, random: true },
+            size: { value: 2.8, random: true },
+            line_linked: { enable: false },
+            move: { enable: true, speed: 0.8, random: true, out_mode: "out" }
+        },
+        interactivity: {
+            detect_on: "window",
+            events: {
+                onhover: { enable: true, mode: "bubble" },
+                onclick: { enable: true, mode: "push" }
+            },
+            modes: {
+                bubble: { distance: 200, size: 4, duration: 0.5, opacity: 0.9 },
+                push: { particles_nb: 7 }
+            }
+        },
+        retina_detect: true
+    });
+}
+
+// THEME TOGGLE
+let currentTheme = localStorage.getItem("theme");
+if (currentTheme === "light") {
+    document.body.classList.add("light-mode");
+    toggleBtn.textContent = "☀️";
+    loadParticles("#0f172a");
+} else {
+    loadParticles("#ffffff");
+}
+
+toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
+    if (document.body.classList.contains("light-mode")) {
+        toggleBtn.textContent = "☀️";
+        localStorage.setItem("theme", "light");
+        loadParticles("#0f172a");
+    } else {
+        toggleBtn.textContent = "🌙";
+        localStorage.setItem("theme", "dark");
+        loadParticles("#ffffff");
+    }
+});
+
+// HAMBURGER MENU
+hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    hamburger.classList.toggle("active");
+});
+
+// CLOSE MENU ON LINK CLICK
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        hamburger.classList.remove("active");
+    });
+}); </script>
 
 </body>
 </html>
