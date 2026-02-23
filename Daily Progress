@@ -164,3 +164,42 @@ https://pranjal-khanderao.github.io/portfolio/index.html
   
 GitHub Link:  
 https://github.com/Pranjal-Khanderao/portfolio
+
+-----------------------------------------------------------
+
+Day 06 Progress Report
+
+Date: 21/02/26
+In Time: 06:00 PM
+Out Time: 09:30 PM
+Name: Pranjal Khanderao
+College: Saraswati College Shegaon
+
+Progress Summary
+
+• Added a new Projects section to highlight completed and ongoing work.
+• Designed responsive project cards with title, description, and technology stack details.
+• Integrated a web application project into the portfolio with proper navigation.
+• Implemented smooth hover animations and transition effects for project cards.
+• Optimized project images for better performance and faster loading.
+• Ensured full responsiveness of the Projects section on mobile and tablet devices.
+• Improved layout spacing and alignment for better visual consistency.
+• Enhanced semantic HTML structure for better SEO and accessibility.
+• Tested cross-browser compatibility and fixed minor UI issues.
+• Refactored CSS for improved maintainability and cleaner styling.
+• Successfully committed and pushed updates to GitHub.
+• Updated and redeployed the portfolio on GitHub Pages.
+
+Required Upgradation
+
+• Add filtering functionality to sort projects by technology.
+• Implement lazy loading for images to improve performance.
+• Add detailed project case study pages.
+• Introduce dark/light theme toggle option.
+• Improve accessibility with keyboard navigation support.
+
+Live Portfolio Website Link:
+https://pranjal-khanderao.github.io/portfolio/index.html
+
+GitHub Link:
+https://github.com/Pranjal-Khanderao/portfolio
